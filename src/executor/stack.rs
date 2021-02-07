@@ -270,8 +270,9 @@ impl<'backend, 'config, B: Backend> StackExecutor<'backend, 'config, B> {
 		&self,
 		price: U256,
 	) -> U256 {
-		let used_gas = self.used_gas();
-		U256::from(used_gas) * price
+		// let used_gas = self.used_gas();
+		// U256::from(used_gas) * price
+		U256::zero()
 	}
 
 	/// Deconstruct the executor, return state to be applied. Panic if the
