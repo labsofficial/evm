@@ -267,10 +267,11 @@ impl<'backend, 'config, B: Backend> StackExecutor<'backend, 'config, B> {
 	/// Get fee needed for the current executor, given the price.
 	pub fn fee(
 		&self,
-		price: U256,
+		_price: U256,
 	) -> U256 {
-		let used_gas = self.used_gas();
-		U256::from(used_gas) * price
+		// let used_gas = self.used_gas();
+		// U256::from(used_gas) * price
+		U256::zero()
 	}
 
 	/// Deconstruct the executor, return state to be applied. Panic if the
